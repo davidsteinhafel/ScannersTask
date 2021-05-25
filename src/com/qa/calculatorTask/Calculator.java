@@ -1,7 +1,7 @@
 package com.qa.calculatorTask;
 
 public class Calculator {
-	
+
 	public static void multiplication(double x, double y) {
 
 		double result;
@@ -29,13 +29,10 @@ public class Calculator {
 			return (0);
 
 		} else {
-			
+
 			System.out.println("Your answer is: " + x / y);
-			
+
 			return x / y;
-
 		}
-
 	}
-
 }

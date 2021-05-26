@@ -14,87 +14,52 @@ public class Menu {
 		switch (input) {
 		case "1":
 			System.out.println("division");
-			System.out.println("Please input first number");
-			double numOne = scanner.nextDouble();
-			System.out.println("Please input second number");
-			double numTwo = scanner.nextDouble();
-			Calculator.division(numOne, numTwo);
-			System.out.println("Would you like to do another operation (1 for yes, 2 for no)");
-			scanner.nextLine();
-			String again = scanner.nextLine();
-			switch (again) {
-			case "1":
-				System.out.println("restarting...");
-				userInterface();
-				break;
-			case "2":
-				closeScanner();
-				break;
-			default:
-				System.out.println("ummm?");
-				closeScanner();
-				break;
-			}
+			Calculator.division(returnNum(), returnNum());
+			subMenu();
 			break;
 		case "2":
 			System.out.println("multiplication");
-			System.out.println("Please input first number");
-			numOne = scanner.nextDouble();
-			System.out.println("Please input second number");
-			numTwo = scanner.nextDouble();
-			Calculator.multiplication(numOne, numTwo);
-			System.out.println("Would you like to do another operation (1 for yes, 2 for no)");
-			scanner.nextLine();
-			again = scanner.nextLine();
-			
-
-			switch (again) {
-			case "1":
-				System.out.println("restarting...");
-				userInterface();
-				break;
-			case "2":
-				closeScanner();
-				break;
-			default:
-				System.out.println("ummm?");
-				closeScanner();
-				break;
-			}
+			Calculator.multiplication(returnNum(), returnNum());
+			subMenu();
 			break;
 		case "3":
 			System.out.println("Subtraction");
-			System.out.println("Please input first number");
-			numOne = scanner.nextDouble();
-			System.out.println("Please input second number");
-			numTwo = scanner.nextDouble();
-			Calculator.subtraction(numOne, numTwo);
-			System.out.println("Would you like to do another operation (1 for yes, 2 for no)");
-			scanner.nextLine();
-			again = scanner.nextLine();
-
-			switch (again) {
-			case "1":
-				System.out.println("restarting...");
-				userInterface();
-				break;
-			case "2":
-				closeScanner();
-				break;
-			default:
-				System.out.println("ummm?");
-				closeScanner();
-				break;
-			}
+			Calculator.subtraction(returnNum(), returnNum());
+			subMenu();
 			break;
 		case "4":
 			closeScanner();
 			break;
 		default:
-			System.out.println("Please press one of the specified numbers");
+			System.out.println("Please press one of the specified numbers! RESTARTING...");
 			userInterface();
 			break;
 		}
+	}
+
+	public static void subMenu() {
+		System.out.println("Would you like to do another operation (1 for yes, 2 for no)");
+		scanner.nextLine();
+		String input = scanner.nextLine();
+		switch (input) {
+		case "1":
+			System.out.println("restarting...");
+			userInterface();
+			break;
+		case "2":
+			closeScanner();
+			break;
+		default:
+			System.out.println("ummm?");
+			closeScanner();
+			break;
+		}
+	}
+
+	public static double returnNum() {
+		System.out.println("Please input a number");
+		double numOne = scanner.nextDouble();
+		return (numOne);
 	}
 
 	public static void closeScanner() {
@@ -103,5 +68,4 @@ public class Menu {
 		scanner.close();
 		System.out.println("Scanner closed.");
 	}
-
 }

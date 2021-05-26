@@ -18,9 +18,11 @@ public class ScannerExample {
 		}
 		finally {
 			System.out.println("the try catch has finished");
+			
 		}
 		
 		Menu.userInterface();
 		Menu.closeScanner();
+		
 	}
 }
